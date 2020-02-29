@@ -50,34 +50,14 @@
 
   <section class="jumbotron text-center">
     <div class="container">
-      <h1>Idiel Guerra</h1>
-      <p class="lead text-muted">I am a student at Florida International University studying computer scinece and love to teach myself new tech material</p>
+      <h1>Job Detail</h1>
+      <p class="lead text-muted">{{job.summary}}</p>
+      <img src="{{ job.image.url }}" height = 450 ></img>
       <p>
-        <a href="mailto:idielguerra@hotmail.com" class="btn btn-primary my-2">Email me</a>
+        <a href="{% url 'home' %}" class="btn btn-primary my-2">Back</a>
       </p>
-      <img src="{% static 'idiel.jpg' %}" height = 450 ></img>
     </div>
   </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-       <div class="row">
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <a href="{% url 'detail' job.id %}">
-          <div class="card mb-4 shadow-sm">
-            <img src="{{job.image.url}}" height="250" ></img>
-            <div class="card-body">
-              <p class="card-text">{{job.summary}}</p>
-            </div>
-          </div>
-          </a>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-
 </main>
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
